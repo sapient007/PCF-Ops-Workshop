@@ -11,7 +11,7 @@ $ cf push
 == SCALE!
 
 ----
-$ cf scale cf-scale-boot -i 1000
+$ cf scale cf-scale-boot -i 10
 ----
 
 (_or some reasonable number for your CF cloud!_)
