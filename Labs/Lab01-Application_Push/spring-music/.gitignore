@@ -12,9 +12,7 @@ local.properties
 .loadpath
 
 
-target/
 
 .gradle
-build/
 
 *.log*
