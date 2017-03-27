@@ -29,27 +29,8 @@ Follow the prompts, entering in the student credentials provided by the instruct
 
 Change to the _Spring Music_ sample application directory:
 ----
-$ cd $COURSE_HOME/Labs/Lab01-Application_Push/spring-music
+$ cd $COURSE_HOME/Labs/Lab01-Application_Push/cf-env
 ----
-
-=== Download
-
-If you cannot run the gradle script to build:
-
-. Download the spring-music.war file https://github.com/vrusso-pivotal/PCF-Ops-Workshop-master/releases/download/1.0/spring-music.war[here]
-. Create the directory `/build/libs/`.
-. Place the .war file in the `/build/libs/` directory.
-. Skip down to the 'Push' section.
-
-=== Build
-
-Use the Gradle Wrapper to build and package the application:
-
-----
-$ gradle assemble
-----
-
-The Gradle Wrapper will automatically download the appropriate version of Gradle for this project along with all of _Spring Music_'s dependencies. This may take a few moments.
 
 === Push
 
@@ -63,86 +44,91 @@ You should see output similar to the following listing. Take a look at the listi
 
 ====
 ----
-Using manifest file /Users/vince/Documents/PCF-Ops-Workshop-master/Labs/Lab01-Application_Push/spring-music/manifest.yml
+Using manifest file /Users/mling/PCF-Ops-Workshop/Labs/Lab01-Application_Push/cf-env/manifest.yml
 
-Creating app spring-music in org Southeast / space vrusso as vrussoiii@pivotal.io...
+Updating app cf-env-mling in org EPA / space mling as admin...
 OK
 
-Creating route spring-music-pedate-bowdlerization.cfapps.io...
+Creating route cf-env-mling-emptiest-oviparousness.apps.cf.mingling.net...
 OK
 
-Binding spring-music-pedate-bowdlerization.cfapps.io to spring-music...
+Binding cf-env-mling-emptiest-oviparousness.apps.cf.mingling.net to cf-env-mling...
 OK
 
-Uploading spring-music...
-Uploading app files from: /var/folders/y7/xjdjgybn74z794qc8t0gkm9c0000gn/T/unzipped-app068780761
-Uploading 569.7K, 90 files
-Done uploading               
+Uploading cf-env-mling...
+Uploading app files from: /Users/mling/PCF-Ops-Workshop/Labs/Lab01-Application_Push/cf-env
+Uploading 120.9K, 26 files
+Done uploading
 OK
 
-Starting app spring-music in org Southeast / space vrusso as vrussoiii@pivotal.io...
-Downloading binary_buildpack...
-Downloading java_buildpack...
-Downloading python_buildpack...
-Downloading ruby_buildpack...
-Downloading go_buildpack...
-Downloading staticfile_buildpack...
+Starting app cf-env-mling in org EPA / space mling as admin...
 Downloading nodejs_buildpack...
-Downloading liberty_buildpack...
+Downloading java_buildpack_offline...
+Downloading staticfile_buildpack...
+Downloading binary_buildpack...
+Downloaded binary_buildpack (9.3K)
+Downloading python_buildpack...
+Downloaded staticfile_buildpack (2.6M)
+Downloading go_buildpack...
 Downloading php_buildpack...
-Downloaded python_buildpack
-Downloaded nodejs_buildpack
-Downloaded java_buildpack
-Downloaded liberty_buildpack
-Downloaded php_buildpack
-Downloaded ruby_buildpack
-Downloaded binary_buildpack
-Downloaded staticfile_buildpack
-Downloaded go_buildpack
+Downloaded nodejs_buildpack (109.4M)
+Downloading ruby_buildpack...
+Downloaded java_buildpack_offline (249.1M)
+Downloading dotnet_core_buildpack...
+Downloaded python_buildpack (255.3M)
+Downloaded dotnet_core_buildpack (169.3M)
+Downloaded ruby_buildpack (260.8M)
+Downloaded php_buildpack (310.4M)
+Downloaded go_buildpack (392M)
 Creating container
 Successfully created container
 Downloading app package...
-Downloaded app package (20.1M)
+Downloaded app package (404.7K)
 Staging...
------> Java Buildpack Version: v3.8 (offline) | https://github.com/cloudfoundry/java-buildpack.git#29c79f2
------> Downloading Open Jdk JRE 1.8.0_91-unlimited-crypto from https://download.run.pivotal.io/openjdk/trusty/x86_64/openjdk-1.8.0_91-unlimited-crypto.tar.gz (found in cache)
-       Expanding Open Jdk JRE to .java-buildpack/open_jdk_jre (1.0s)
------> Downloading Open JDK Like Memory Calculator 2.0.2_RELEASE from https://download.run.pivotal.io/memory-calculator/trusty/x86_64/memory-calculator-2.0.2_RELEASE.tar.gz (found in cache)
-       Memory Settings: -Xss228K -Xmx317161K -XX:MaxMetaspaceSize=64M -Xms317161K -XX:MetaspaceSize=64M
------> Downloading Spring Auto Reconfiguration 1.10.0_RELEASE from https://download.run.pivotal.io/auto-reconfiguration/auto-reconfiguration-1.10.0_RELEASE.jar (found in cache)
------> Downloading Tomcat Instance 8.0.35 from https://download.run.pivotal.io/tomcat/tomcat-8.0.35.tar.gz (found in cache)
-       Expanding Tomcat Instance to .java-buildpack/tomcat (0.1s)
------> Downloading Tomcat Lifecycle Support 2.5.0_RELEASE from https://download.run.pivotal.io/tomcat-lifecycle-support/tomcat-lifecycle-support-2.5.0_RELEASE.jar (found in cache)
------> Downloading Tomcat Logging Support 2.5.0_RELEASE from https://download.run.pivotal.io/tomcat-logging-support/tomcat-logging-support-2.5.0_RELEASE.jar (found in cache)
------> Downloading Tomcat Access Logging Support 2.5.0_RELEASE from https://download.run.pivotal.io/tomcat-access-logging-support/tomcat-access-logging-support-2.5.0_RELEASE.jar (found in cache)
+-------> Buildpack version 1.7.16
+file:///tmp/buildpacks/0e5cebf8cef53453ba2dd37a7b418c39/dependencies/https___buildpacks.cloudfoundry.org_dependencies_godep_godep-v75-linux-x64.tgz
+file:///tmp/buildpacks/0e5cebf8cef53453ba2dd37a7b418c39/dependencies/https___buildpacks.cloudfoundry.org_dependencies_glide_glide-v0.12.3-linux-x64.tgz
+-----> Checking Godeps/Godeps.json file.
+-----> Installing go1.7.4... done
+Downloaded [file:///tmp/buildpacks/0e5cebf8cef53453ba2dd37a7b418c39/dependencies/https___buildpacks.cloudfoundry.org_dependencies_go_go1.7.4.linux-amd64.tar.gz]
+ !!    Installing package '.' (default)
+ !!
+ !!    vendor/ directory does not exist.
+ !!
+-----> Running: go install -v -tags cloudfoundry .
+github.com/tracyde/cf-env
+Exit status 0
 Staging complete
 Uploading droplet, build artifacts cache...
 Uploading build artifacts cache...
-Uploaded droplet (73.1M)
+Uploading droplet...
+Uploaded build artifacts cache (66.5M)
+Uploaded droplet (2.8M)
 Uploading complete
+Destroying container
 
-0 of 1 instances running, 1 starting
 1 of 1 instances running
 
 App started
 
+
 OK
 
-App spring-music was started using this command `CALCULATED_MEMORY=$($PWD/.java-buildpack/open_jdk_jre/bin/java-buildpack-memory-calculator-2.0.2_RELEASE -memorySizes=metaspace:64m..,stack:228k.. -memoryWeights=heap:65,metaspace:10,native:15,stack:10 -memoryInitials=heap:100%,metaspace:100% -stackThreads=300 -totMemory=$MEMORY_LIMIT) &&  JAVA_HOME=$PWD/.java-buildpack/open_jdk_jre JAVA_OPTS="-Djava.io.tmpdir=$TMPDIR -XX:OnOutOfMemoryError=$PWD/.java-buildpack/open_jdk_jre/bin/killjava.sh $CALCULATED_MEMORY -Daccess.logging.enabled=false -Dhttp.port=$PORT" exec $PWD/.java-buildpack/tomcat/bin/catalina.sh run`
+App cf-env-mling was started using this command `cf-env`
 
-Showing health and status for app spring-music in org Southeast / space vrusso as vrussoiii@pivotal.io...
+Showing health and status for app cf-env-mling in org EPA / space mling as admin...
 OK
 
 requested state: started
 instances: 1/1
-usage: 512M x 1 instances
-urls: spring-music-pedate-bowdlerization.cfapps.io
-last uploaded: Tue Jul 12 18:07:15 UTC 2016
-stack: unknown
-buildpack: java-buildpack=v3.8-offline-https://github.com/cloudfoundry/java-buildpack.git#29c79f2 open-jdk-like-jre=1.8.0_91-unlimited-crypto open-jdk-like-memory-calculator=2.0.2_RELEASE spring-auto-reconfiguration=1.10.0_RELEASE tomcat-access-logging-support=2....
+usage: 1G x 1 instances
+urls: cf-env-mling-emptiest-oviparousness.apps.cf.mingling.net
+last uploaded: Mon Mar 27 01:50:30 UTC 2017
+stack: cflinuxfs2
+buildpack: Go
 
-     state     since                    cpu    memory         disk         details
-#0   running   2016-07-12 02:07:56 PM   0.0%   840K of 512M   1.3M of 1G
+     state     since                    cpu    memory       disk          details
+#0   running   2017-03-26 09:52:28 PM   0.0%   3.4M of 1G   10.5M of 1G
 ----
 
 <1> The CLI is using a manifest to provide necessary configuration details such as application name, memory to be allocated, and path to the application artifact.
@@ -163,11 +149,3 @@ Here the droplet is being uploaded to PCF's internal blobstore so that it can be
 <11> Finally the CLI reports the current status of your application's health.
 You can get the same output at any time by typing `cf app spring-music`.
 ====
-
-Visit the application in your browser by hitting the route that was generated by the CLI.  You can find the route by typing `cf apps`, and it will look something like `https://spring-music-pedate-bowdlerization.<DOMAIN-PROVIDED-BY-INSTRUCTOR>`
-
-image::/../../Common/images/Spring_Music_NS.png[]
-
-Be sure to click on the `information icon` in the top right-hand corner of the UI.
-This gives you important information about the state of the currently running _Spring Music_ instance, including what Spring Profiles are turned on and what Cloud Foundry services are bound.
-It will become important in the next lab!
